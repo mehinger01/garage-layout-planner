@@ -1,0 +1,64 @@
+# ============================================================
+# GARAGE MEASUREMENT FORM - Mike's Garage
+# ============================================================
+# Run: py garage_intake_v2.py --import mikes_garage.txt
+# ============================================================
+
+[GARAGE DIMENSIONS]
+width_ew: 25'
+length_ns: 25'
+ceiling_height: 12' 2"
+
+[NORTH WALL]
+# --- Exterior Door (middle) ---
+feature: Service Door
+position: 12' 6"
+width: 36"
+height: 80"
+notes: exterior door, centered
+
+[EAST WALL]
+# --- Entry Door to house (3/4 down = ~18.75' from left/north corner) ---
+feature: Entry Door
+position: 18' 9"
+width: 36"
+height: 80"
+notes: door into house
+
+# --- Electrical Panel (5' after entry door) ---
+feature: Electrical Panel
+position: 23' 9"
+width: 18"
+height: 48"
+notes: 5' after entry door
+
+[SOUTH WALL]
+# --- Garage Door ---
+feature: Garage Door
+position: 12' 6"
+width: 16'
+height: 8'
+notes: centered on wall
+
+[WEST WALL]
+# --- Window 1 (left) ---
+feature: Window
+position: 62"
+width: 36"
+sill_height: 33"
+header_height: 48.5"
+notes: left window
+
+# --- Window 2 (right) ---
+# Position: 25' - 64" from right - half window width = ~19' 2"
+feature: Window
+position: 19' 2"
+width: 36"
+sill_height: 33"
+header_height: 48.5"
+notes: right window, 64" from right edge
+
+[FLOOR FEATURES]
+
+[NOTES]
+notes: 25' x 25' garage. 8' between windows on west wall.

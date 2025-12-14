@@ -1,0 +1,226 @@
+============================================================
+                 RECOMMENDED GARAGE LAYOUT                  
+                     Garage: 25' x 25'                      
+============================================================
+
+                    NORTH
+        +--------------------------------------------------+
+        |SSSSSSSSWWWWWWWWWWWWW   SOOOOOOOOOOOOOOOOOOOOO SSS|
+        |SSSSSSSSWWWWWWWWWWWWW   SOOOOOOOOOOOOOOOOOOOOO SSS|
+        |SSSSSSSSWWWWWWWWWWWWW   SOOOOOOOOOOOOOOOOOOOOO SSS|
+        |     WWWWWWWWWWWWWWWW    OOOOOOOOOOOOOOOOOOOOO    |
+        |SSSSSSSSWWWWWWWWWWWWW    OOOOOOOOOOOOOOOOOOOOO SSS|
+        |SSSSSSSSWWWWWWWWWWWWW    OOOOOOOOOOOOOOOOOOOOO SSS|
+        |SSSSSSSSWWWWWWWWWWWWW    OOOOOOOOOOOOOOOOOOOOO SSS|
+        |     WWWWWWWWWWWWWWWW    OOOOOOOOOOOOOOOOOOOOO    |
+        |SSSSSSSSWWWWWWWWWWWWW                     OOOOOOOO|
+        |SSSSSSSSWWWWWWWWWWWWW                     OOOOOOOO|
+        |SSSSSSSSWWWWWWWWWWWWW                     OOOOOOOO|
+        |                                          OOOOOOOO|
+        |OOOOOOOO                                  OOOOOOOO|
+        |OOOOOOOO                                  OOOOOOOO|
+        |OOOOOOOO                                  OOOOOOOO|
+        |OOOOOOOO       VVVVVVVVVVVVVVVVVVV        OOOOOOOO|
+        |OOOOOOOO       VVVVVVVVVVVVVVVVVVV        OOOOOOOO|
+        |OOOOOOOO       VVVVVVVVVVVVVVVVVVV        OOOOOOOO|
+        |OOOOOOOO       VVVVVVVVVVVVVVVVVVV        OOOOOOOO|
+        |OOOOOOOO       VVVVVVVVVVVVVVVVVVV        OOOOOOOO|
+        |OOOOOOOO       VVVVVVVVVVVVVVVVVVV        OOOOOOOO|
+        |OOOOOOOO       VVVVVVVVVVVVVVVVVVV        OOOOOOOO|
+        |OOOOOOOO       VVVVVVVVVVVVVVVVVVV        OOOOOOOO|
+        |               VVVVVVVVVVVVVVVVVVV        OOOOOOOO|
+        |SSSSSSSS       VVVVVVVVVVVVVVVVVVV             SSS|
+        |SSSSSSSS       VVVVVVVVVVVVVVVVVVV             SSS|
+        |SSSSSSSS       VVVVVVVVVVVVVVVVVVV             SSS|
+        |               VVVVVVVVVVVVVVVVVVV                |
+        |SSSSSSSS       VVVVVVVVVVVVVVVVVVV             SSS|
+        |SSSSSSSS       VVVVVVVVVVVVVVVVVVV             SSS|
+        |SSSSSSSS       VVVVVVVVVVVVVVVVVVV             SSS|
+        |               VVVVVVVVVVVVVVVVVVV                |
+        |SSSSSSSS       VVVVVVVVVVVVVVVVVVV             SSS|
+        |SSSSSSSS       VVVVVVVVVVVVVVVVVVV             SSS|
+        |SSSSSSSS       VVVVVVVVVVVVVVVVVVV             SSS|
+        |               VVVVVVVVVVVVVVVVVVV                |
+        |               VVVVVVVVVVVVVVVVVVV                |
+        |               VVVVVVVVVVVVVVVVVVV                |
+        |               VVVVVVVVVVVVVVVVVVV                |
+        |               VVVVVVVVVVVVVVVVVVV                |
+        |               VVVVVVVVVVVVVVVVVVV                |
+        |               VVVVVVVVVVVVVVVVVVV                |
+        |               VVVVVVVVVVVVVVVVVVV                |
+        |               VVVVVVVVVVVVVVVVVVV                |
+        |               VVVVVVVVVVVVVVVVVVV                |
+        |               VDVVVVVVVVVVVVVVVVV                |
+        |               VVVVVVVVVVVVVVVVVVV                |
+        |               VVVVVVVVVVVVVVVVVVV                |
+        |  Ew           VVVVVVVVVVVVVVVVVVV                |
+        |               VVVVVVVVVVVVVVVVVVV                |
+        +--------------------------------------------------+
+                    SOUTH (Garage Door)
+
+LEGEND:
+  V = Vehicle parking    W = Workbench      S = Wall storage
+  O = Overhead storage   D = Door           E = Electrical
+  w = Window
+
+
+============================================================
+                GARAGE LAYOUT RECOMMENDATION                
+============================================================
+
+SUMMARY
+----------------------------------------
+Garage size: 25' x 25'
+Ceiling height: 12' 2"
+Layout score: 100/100
+
+ZONES PLACED
+----------------------------------------
+  Workbench
+    Position: 2' 6" from W, 0' from N
+    Size: 8' x 5' 6"
+    Wall: N
+    Note: Position for good lighting and electrical access
+  Wall Storage 1
+    Position: 12' from W, 0' from N
+    Size: 4' x 1' 6"
+    Wall: N
+  Wall Storage 2
+    Position: 23' 6" from W, 0' from N
+    Size: 4' x 1' 6"
+    Wall: E
+  Wall Storage 3
+    Position: 0' from W, 0' from N
+    Size: 4' x 1' 6"
+    Wall: W
+  Wall Storage 4
+    Position: 16' from W, 0' from N
+    Size: 4' x 1' 6"
+    Wall: N
+  Wall Storage 5
+    Position: 23' 6" from W, 2' from N
+    Size: 4' x 1' 6"
+    Wall: E
+  Wall Storage 6
+    Position: 0' from W, 2' from N
+    Size: 4' x 1' 6"
+    Wall: W
+  Wall Storage 7
+    Position: 23' 6" from W, 4' from N
+    Size: 4' x 1' 6"
+    Wall: E
+  Wall Storage 8
+    Position: 0' from W, 4' from N
+    Size: 4' x 1' 6"
+    Wall: W
+  Wall Storage 9
+    Position: 23' 6" from W, 6' from N
+    Size: 4' x 1' 6"
+    Wall: E
+  Wall Storage 10
+    Position: 0' from W, 6' from N
+    Size: 4' x 1' 6"
+    Wall: W
+  Wall Storage 11
+    Position: 23' 6" from W, 8' from N
+    Size: 4' x 1' 6"
+    Wall: E
+  Wall Storage 12
+    Position: 0' from W, 8' from N
+    Size: 4' x 1' 6"
+    Wall: W
+  Wall Storage 13
+    Position: 23' 6" from W, 10' from N
+    Size: 4' x 1' 6"
+    Wall: E
+  Wall Storage 14
+    Position: 0' from W, 10' from N
+    Size: 4' x 1' 6"
+    Wall: W
+  Wall Storage 15
+    Position: 23' 6" from W, 12' from N
+    Size: 4' x 1' 6"
+    Wall: E
+  Wall Storage 16
+    Position: 0' from W, 12' from N
+    Size: 4' x 1' 6"
+    Wall: W
+  Wall Storage 17
+    Position: 23' 6" from W, 14' from N
+    Size: 4' x 1' 6"
+    Wall: E
+  Wall Storage 18
+    Position: 0' from W, 14' from N
+    Size: 4' x 1' 6"
+    Wall: W
+  Wall Storage 19
+    Position: 23' 6" from W, 16' from N
+    Size: 4' x 1' 6"
+    Wall: E
+  Wall Storage 20
+    Position: 0' from W, 16' from N
+    Size: 4' x 1' 6"
+    Wall: W
+  2019 Hyundai Elantra
+    Position: 7' 6" from W, 7' 8" from N
+    Size: 9' 12" x 17' 4"
+    Wall: S
+    Note: Pull in from garage door
+  Overhead Storage - North
+    Position: 12' 6" from W, 0' from N
+    Size: 10' 6" x 4'
+    Wall: ceiling
+    Note: Mount at 7' minimum clearance
+  Overhead Storage - West
+    Position: 0' from W, 6' from N
+    Size: 4' x 5' 8"
+    Wall: ceiling
+    Note: Mount at 7' minimum clearance
+  Overhead Storage - East
+    Position: 21' from W, 4' from N
+    Size: 4' x 8'
+    Wall: ceiling
+    Note: Mount at 7' minimum clearance
+
+REASONING
+----------------------------------------
+  * Placed Workbench on N wall at (2' 6", 0')
+  * Placed Wall Storage 1 on N wall at (12', 0')
+  * Placed Wall Storage 2 on E wall at (23' 6", 0')
+  * Placed Wall Storage 3 on W wall at (0', 0')
+  * Placed Wall Storage 4 on N wall at (16', 0')
+  * Placed Wall Storage 5 on E wall at (23' 6", 2')
+  * Placed Wall Storage 6 on W wall at (0', 2')
+  * Placed Wall Storage 7 on E wall at (23' 6", 4')
+  * Placed Wall Storage 8 on W wall at (0', 4')
+  * Placed Wall Storage 9 on E wall at (23' 6", 6')
+  * Placed Wall Storage 10 on W wall at (0', 6')
+  * Placed Wall Storage 11 on E wall at (23' 6", 8')
+  * Placed Wall Storage 12 on W wall at (0', 8')
+  * Placed Wall Storage 13 on E wall at (23' 6", 10')
+  * Placed Wall Storage 14 on W wall at (0', 10')
+  * Placed Wall Storage 15 on E wall at (23' 6", 12')
+  * Placed Wall Storage 16 on W wall at (0', 12')
+  * Placed Wall Storage 17 on E wall at (23' 6", 14')
+  * Placed Wall Storage 18 on W wall at (0', 14')
+  * Placed Wall Storage 19 on E wall at (23' 6", 16')
+  * Placed Wall Storage 20 on W wall at (0', 16')
+  * Placed 2019 Hyundai Elantra on S wall at (7' 6", 7' 8")
+  * Placed Overhead Storage - North (10' 6" x 4') - ceiling height allows
+  * Placed Overhead Storage - West (4' x 5' 8") - ceiling height allows
+  * Placed Overhead Storage - East (4' x 8') - ceiling height allows
+
+CONSTRAINTS CONSIDERED
+----------------------------------------
+  * Service Door: 0' 36" wide, 12' 6" from left - keep 2' clear
+  * Entry Door: 0' 36" wide, 18' 9" from left - keep 2' clear
+  * Electrical Panel: 0' 18" wide, 23' 9" from left - keep 2' clear
+  * Garage Door: 16' wide, 12' 6" from left - keep 2' clear
+  * Window: 0' 36" wide, 0' 62" from left - keep 2' clear
+  * Window: 0' 36" wide, 19' 2" from left - keep 2' clear
+
+NEXT STEPS
+----------------------------------------
+  1. Review this layout and provide feedback
+  2. Adjust priorities if zones are missing
+  3. Generate build plans for approved layout

@@ -1,0 +1,310 @@
+======================================================================
+                          GARAGE BUILD PLANS                          
+                     Generated: December 13, 2025                     
+======================================================================
+
+BUDGET SUMMARY
+--------------------------------------------------
+  Workbench:          $  162.00
+  French Cleats:      $   86.00
+  Overhead Storage:   $   93.40
+  ------------------------------
+  TOTAL:              $  341.40
+  Budget:             $  500.00
+  Remaining:          $  158.60
+
+  [OK] Under budget by $158.60
+
+
+======================================================================
+SECTION 1: ADVANCED WORKBENCH
+======================================================================
+
+Dimensions: 8.0' x 2.5' x 3.0'
+Estimated Cost: $162.00
+
+FEATURES:
+  • Sturdy 2x4 frame construction
+  • 3/4" plywood top (replaceable)
+  • Lower shelf for storage
+  • Pegboard back panel
+  • Built-in power strip
+  • Two storage drawers
+  • Adjustable leveling feet
+
+CUT LIST:
+--------------------------------------------------
+  [4x] 2x4 @ 32"
+       Purpose: Legs
+  [4x] 2x4 @ 93"
+       Purpose: Long rails (front/back, top/bottom)
+  [4x] 2x4 @ 27"
+       Purpose: Short rails (sides)
+  [2x] 2x4 @ 93"
+       Purpose: Center supports
+  [4x] 2x4 @ 27"
+       Purpose: Shelf supports
+  [1x] 3/4" plywood @ 96" x 30"
+       Purpose: Work surface top
+  [1x] 1/2" plywood @ 96" x 12"
+       Purpose: Lower shelf
+  [1x] Pegboard @ 96" x 24"
+       Purpose: Back panel
+  [2x] 1/2" plywood @ 18" x 20" x 4"
+       Purpose: Drawer boxes
+
+MATERIALS LIST:
+--------------------------------------------------
+  Item                             Qty     Each    Total
+  ------------------------------ ----- -------- --------
+  2x4 x 8'                           8 $   3.50 $  28.00
+  3/4" Plywood 4x8 (BC)              1 $  35.00 $  35.00
+  OSB 1/2" 4x8                       1 $  14.00 $  14.00
+  Pegboard 4x8                       1 $  18.00 $  18.00
+  2.5" Screws (1lb)                  1 $   8.00 $   8.00
+  1.25" Screws (1lb)                 1 $   7.00 $   7.00
+  18" Drawer Slides                  2 $  12.00 $  24.00
+  Drawer Pulls                       2 $   2.00 $   4.00
+  Wood Glue                          1 $   6.00 $   6.00
+  Power Strip 6'                     1 $  12.00 $  12.00
+  Corner Braces                      4 $   1.50 $   6.00
+
+ASSEMBLY STEPS:
+--------------------------------------------------
+
+STEP 1: Cut all lumber
+    • Cut 2x4s according to cut list
+    • Cut plywood pieces - top, shelf, drawer parts
+    • Cut pegboard to width
+    • Sand all cut edges
+
+STEP 2: Build leg assemblies
+    • Attach short rails between pairs of legs at top and 12" from bottom
+    • Use 2 screws per joint + wood glue
+    • Check for square using carpenter's square
+    • Build two identical leg assemblies
+
+STEP 3: Connect frame
+    • Connect leg assemblies with long rails (front and back)
+    • Top rails flush with leg tops
+    • Bottom rails at same 12" height as short rails
+    • Add corner braces at all top corners
+
+STEP 4: Add center supports
+    • Install center supports across width at top
+    • Space evenly (about 32" apart for 8' bench)
+    • These support the plywood top
+
+STEP 5: Install shelf
+    • Add shelf supports on lower rails
+    • Cut and install 1/2" plywood shelf
+    • Screw down with 1.25" screws
+
+STEP 6: Build and install drawers
+    • Build two drawer boxes from 1/2" plywood
+    • Inside dimensions: 16" W x 18" D x 4" H
+    • Install drawer slides on frame and drawer boxes
+    • Attach drawer pulls
+
+STEP 7: Install work surface
+    • Place 3/4" plywood on top frame
+    • Align flush with front edge
+    • Screw down from underneath into plywood
+    • Optional: Add hardboard sacrificial top layer
+
+STEP 8: Attach pegboard back
+    • Mount pegboard to back legs
+    • Use spacers (3/4" minimum) to allow hook insertion
+    • Secure with screws through spacers
+
+STEP 9: Final touches
+    • Install leveling feet on legs
+    • Mount power strip under front edge of top
+    • Add pegboard hooks and organize tools
+    • Optional: Apply polyurethane to top for durability
+
+
+======================================================================
+SECTION 2: FRENCH CLEAT WALL STORAGE
+======================================================================
+
+Coverage: 20 sections, 80 linear feet
+Estimated Cost: $86.00
+
+FEATURES:
+  • Versatile - rearrange anytime
+  • Strong - each cleat holds 50+ lbs
+  • DIY-friendly - just 45° cuts
+  • Expandable - add more accessories over time
+  • Works with: shelves, bins, tool holders, cabinets
+
+MATERIALS LIST:
+--------------------------------------------------
+  Item                             Qty     Each    Total
+  ------------------------------ ----- -------- --------
+  3/4" Plywood 4x8 (BC)              2 $  35.00 $  70.00
+  3" Screws (1lb)                    1 $   9.00 $   9.00
+  1.25" Screws (1lb)                 1 $   7.00 $   7.00
+
+INSTALLATION STEPS:
+--------------------------------------------------
+
+STEP 1: Cut cleat strips
+    • Set table saw blade to 45°
+    • Rip 3/4" plywood into 3.5" wide strips
+    • Each strip gives you one wall cleat and one hanger cleat
+    • Cut strips to 48" lengths (or wall section width)
+
+STEP 2: Locate and mark studs
+    • Use stud finder on each wall
+    • Mark stud locations with tape
+    • Studs are typically 16" on center
+    • Each cleat should hit at least 2 studs
+
+STEP 3: Install wall cleats
+    • Start at top of storage zone (about 72" from floor)
+    • Level is critical - use 4' level
+    • Drive 3" screws through cleat into each stud
+    • Install cleats every 16-24" down the wall
+    • 45° angle faces UP and OUT on wall cleats
+
+STEP 4: Build basic shelf accessory
+    • Cut shelf piece (e.g., 24" x 8")
+    • Attach cleat to back of shelf (45° faces DOWN)
+    • Cleat should be flush with top of shelf back
+    • Hang on wall - it locks in place!
+
+STEP 5: Build tool holder accessory
+    • Cut backing piece (12" x 12")
+    • Drill holes or add hooks as needed
+    • Attach cleat strip to back
+    • Customize for your specific tools
+
+ACCESSORY IDEAS (build from scraps):
+--------------------------------------------------
+  • Basic Shelf (24" x 8") - Paint cans, spray cans, small boxes
+  • Deep Shelf (24" x 12") - Power tools, larger items
+  • Bin Holder (Holds standard bins) - Hardware, small parts
+  • Paper Towel Holder (6" x 6") - Shop towels
+  • Cordless Drill Dock (8" x 6") - Drill + batteries
+  • Screwdriver Rack (12" x 4") - 8-10 screwdrivers
+  • Tape Dispenser (6" x 4") - Tape rolls on dowel
+  • Extension Cord Holder (8" x 8") - Coiled cords
+
+
+======================================================================
+SECTION 3: OVERHEAD STORAGE PLATFORMS
+======================================================================
+
+Platforms: 1
+Estimated Cost: $93.40
+
+PLATFORM SIZES:
+  • Main Overhead Platform: 8.0' x 4.0'
+
+FEATURES:
+  • Mounted to ceiling joists for strength
+  • Holds 250+ lbs per platform (when properly installed)
+  • 7' clearance underneath for walking/parking
+  • Perfect for seasonal items, bins, lumber
+  • Budget option: Start with 1 platform, expand later
+
+MATERIALS LIST:
+--------------------------------------------------
+  Item                             Qty     Each    Total
+  ------------------------------ ----- -------- --------
+  2x4 x 8'                           4 $   3.50 $  14.00
+  OSB 1/2" 4x8                       1 $  14.00 $  14.00
+  Heavy Ceiling Brackets             6 $   8.00 $  48.00
+  3/8" x 3" Lag Bolts               12 $   0.60 $   7.20
+  3/8" Washers                      12 $   0.10 $   1.20
+  3" Screws (1lb)                    1 $   9.00 $   9.00
+
+INSTALLATION STEPS:
+--------------------------------------------------
+
+STEP 1: Locate ceiling joists
+    • Use stud finder to locate joists
+    • Mark joist locations on ceiling
+    • Joists are typically 16" or 24" on center
+    • CRITICAL: Only mount into joists, never just drywall!
+
+STEP 2: Plan bracket placement
+    • Mark bracket locations along joists
+    • Space brackets no more than 24" apart
+    • Ensure platform will be level
+    • Leave 7' minimum clearance from floor
+
+STEP 3: Install ceiling brackets
+    • Pre-drill holes through bracket into joist
+    • Use 3/8" x 4" lag bolts with washers
+    • Tighten securely - these hold everything
+    • Double-check level across all brackets
+
+STEP 4: Build platform frame
+    • Cut 2x4s for perimeter frame
+    • Add cross supports every 24"
+    • Assemble with 3" screws
+    • Check for square
+
+STEP 5: Mount frame to brackets
+    • This is easier with two people
+    • Lift frame and rest on brackets
+    • Secure frame to brackets with bolts
+    • Verify level and stability
+
+STEP 6: Install plywood decking
+    • Cut 1/2" plywood to fit
+    • Lay on frame and screw down
+    • Can leave small gaps for visibility/dust
+    • Sand any sharp edges
+
+SAFETY NOTES:
+--------------------------------------------------
+  [!] Always mount into ceiling joists - NEVER just drywall
+  [!] Use a helper when lifting platforms
+  [!] Don't exceed 50 lbs per square foot load
+  [!] Keep heavy items toward the joists, not center
+  [!] Test stability with light load first
+  [!] If joists run wrong direction, add blocking or use different location
+
+
+======================================================================
+COMBINED SHOPPING LIST
+======================================================================
+
+LUMBER & SHEET GOODS:
+--------------------------------------------------
+  [ ]  12x  2x4 x 8'                       $  42.00
+  [ ]   3x  3/4" Plywood 4x8 (BC)          $ 105.00
+  [ ]   2x  OSB 1/2" 4x8                   $  28.00
+  [ ]   1x  Pegboard 4x8                   $  18.00
+
+HARDWARE & FASTENERS:
+--------------------------------------------------
+  [ ]   1x  2.5" Screws (1lb)              $   8.00
+  [ ]   2x  1.25" Screws (1lb)             $  14.00
+  [ ]   2x  18" Drawer Slides              $  24.00
+  [ ]   2x  Drawer Pulls                   $   4.00
+  [ ]   1x  Wood Glue                      $   6.00
+  [ ]   1x  Power Strip 6'                 $  12.00
+  [ ]   4x  Corner Braces                  $   6.00
+  [ ]   2x  3" Screws (1lb)                $  18.00
+  [ ]   6x  Heavy Ceiling Brackets         $  48.00
+  [ ]  12x  3/8" x 3" Lag Bolts            $   7.20
+  [ ]  12x  3/8" Washers                   $   1.20
+
+GRAND TOTAL: $341.40
+
+
+======================================================================
+MONEY-SAVING TIPS
+======================================================================
+
+  • Check for damaged/discounted lumber at Home Depot/Lowes
+  • Buy screws in bulk boxes, not small packs
+  • Use OSB instead of plywood for overhead decking (saves ~$15/sheet)
+  • Check Facebook Marketplace for free/cheap plywood scraps
+  • Harbor Freight has cheap clamps for assembly
+  • Rent a table saw if you don't own one (~$50/day)
+  • Ask for contractor discount if buying everything at once

@@ -1,0 +1,586 @@
+#!/usr/bin/env python3
+"""
+Garage Layout Planner - Phase 2: Usage Questionnaire
+Captures how the user wants to use their garage space
+"""
+
+import re
+import json
+import sys
+from dataclasses import dataclass, field
+from typing import Optional, List
+
+# Import vehicle database
+try:
+    from vehicle_database import lookup_vehicle, search_vehicles, get_all_makes, get_models_for_make
+    VEHICLE_DB_AVAILABLE = True
+except ImportError:
+    VEHICLE_DB_AVAILABLE = False
+
+
+class UserExitException(Exception):
+    """Raised when user wants to exit the program"""
+    pass
+
+
+def ask(prompt: str, allow_empty: bool = False) -> str:
+    """Ask a question and get input"""
+    while True:
+        response = input(f"\n{prompt}\n> ").strip()
+        if response.lower() in ['quit', 'exit', 'q']:
+            raise UserExitException()
+        if response or allow_empty:
+            return response
+        print("Please enter a response.")
+
+
+def ask_yes_no(prompt: str) -> bool:
+    """Ask a yes/no question"""
+    while True:
+        response = ask(prompt).lower()
+        if response in ['y', 'yes']:
+            return True
+        if response in ['n', 'no']:
+            return False
+        print("Please enter yes or no (y/n).")
+
+
+def ask_number(prompt: str, min_val: int = 0, max_val: int = 100) -> int:
+    """Ask for a number within a range"""
+    while True:
+        response = ask(prompt)
+        try:
+            num = int(response)
+            if min_val <= num <= max_val:
+                return num
+            print(f"Please enter a number between {min_val} and {max_val}.")
+        except ValueError:
+            print("Please enter a valid number.")
+
+
+def ask_priority(prompt: str) -> int:
+    """Ask for priority 1-5"""
+    print(f"\n{prompt}")
+    print("  1 = Not important")
+    print("  2 = Somewhat important") 
+    print("  3 = Moderately important")
+    print("  4 = Very important")
+    print("  5 = Critical / Must have")
+    return ask_number("> ", 1, 5)
+
+
+@dataclass
+class Vehicle:
+    """A vehicle to be stored in the garage"""
+    year: str
+    make: str
+    model: str
+    must_fit_inside: bool
+    length: str = ""  # Will be fetched
+    width: str = ""   # Will be fetched
+    height: str = ""  # Will be fetched
+    notes: str = ""
+
+
+@dataclass
+class StorageCategory:
+    """A category of items to store"""
+    name: str
+    quantity: str  # light, moderate, heavy
+    needs_accessibility: str  # daily, weekly, seasonal, rarely
+    special_requirements: str = ""  # e.g., climate controlled, locked, etc.
+
+
+@dataclass
+class WorkActivity:
+    """A work activity to be done in the garage"""
+    name: str
+    frequency: str  # daily, weekly, monthly, occasionally
+    space_needed: str  # small (workbench), medium (car), large (multiple cars)
+    power_requirements: str  # none, 110v, 220v
+    notes: str = ""
+
+
+@dataclass 
+class UsageProfile:
+    """Complete usage profile for the garage"""
+    vehicles: List[Vehicle] = field(default_factory=list)
+    storage_categories: List[StorageCategory] = field(default_factory=list)
+    work_activities: List[WorkActivity] = field(default_factory=list)
+    
+    # Priorities (1-5 scale)
+    priority_vehicle_storage: int = 3
+    priority_workspace: int = 3
+    priority_general_storage: int = 3
+    priority_accessibility: int = 3
+    
+    # Preferences
+    prefer_wall_storage: bool = True
+    prefer_overhead_storage: bool = False
+    need_clear_floor: bool = False
+    
+    notes: str = ""
+
+
+# Common storage categories
+STORAGE_CATEGORIES = [
+    ("tools_hand", "Hand Tools (hammers, screwdrivers, wrenches)"),
+    ("tools_power", "Power Tools (drills, saws, sanders)"),
+    ("lawn_garden", "Lawn & Garden (mower, trimmer, hoses, pots)"),
+    ("sports", "Sports Equipment (bikes, golf, skiing, camping)"),
+    ("automotive", "Automotive (oil, fluids, parts, car care)"),
+    ("seasonal", "Seasonal Items (decorations, furniture)"),
+    ("household", "Household Overflow (pantry, bulk items)"),
+    ("workshop", "Workshop Materials (lumber, hardware, supplies)"),
+    ("other", "Other (specify)")
+]
+
+# Common work activities  
+WORK_ACTIVITIES = [
+    ("woodworking", "Woodworking"),
+    ("auto_repair", "Auto Repair/Maintenance"),
+    ("auto_detailing", "Auto Detailing/Washing"),
+    ("metalwork", "Metalworking/Welding"),
+    ("crafts", "Crafts/Hobbies"),
+    ("home_repair", "Home Repair/DIY Projects"),
+    ("gardening", "Gardening/Potting"),
+    ("gym", "Home Gym/Exercise"),
+    ("other", "Other (specify)")
+]
+
+
+def gather_vehicles() -> List[Vehicle]:
+    """Gather information about vehicles to store"""
+    vehicles = []
+    
+    print("\n" + "=" * 50)
+    print("VEHICLES")
+    print("=" * 50)
+    print("Let's talk about vehicles you want in the garage.")
+    
+    if not ask_yes_no("Do you have vehicles to store or park in the garage?"):
+        return vehicles
+    
+    num_vehicles = ask_number("How many vehicles?", 1, 10)
+    
+    for i in range(num_vehicles):
+        print(f"\n--- Vehicle {i + 1} of {num_vehicles} ---")
+        
+        year = ask("Year (e.g., 2020):")
+        make = ask("Make (e.g., Honda, Ford, Tesla):")
+        model = ask("Model (e.g., Civic, F-150, Model 3):")
+        
+        must_fit = ask_yes_no("Must this vehicle fit INSIDE the garage?")
+        
+        notes = ask("Any notes? (lifted, accessories, trailer hitch, etc.)", allow_empty=True)
+        
+        vehicle = Vehicle(
+            year=year,
+            make=make,
+            model=model,
+            must_fit_inside=must_fit,
+            notes=notes
+        )
+        
+        # Look up dimensions from database
+        if VEHICLE_DB_AVAILABLE:
+            try:
+                year_int = int(year)
+            except ValueError:
+                year_int = None
+            
+            dims = lookup_vehicle(make, model, year_int)
+            if dims:
+                vehicle.length = f"{dims['length_in']}\""
+                vehicle.width = f"{dims['width_in']}\""
+                vehicle.height = f"{dims['height_in']}\""
+                print(f"  ✓ Found dimensions: {dims['length_ft']}' L x {dims['width_ft']}' W x {dims['height_ft']}' H")
+            else:
+                print(f"  ⚠ Vehicle not in database. Please enter dimensions manually:")
+                vehicle.length = ask("  Length (e.g., 184\" or 15' 4\"):")
+                vehicle.width = ask("  Width (e.g., 72\" or 6'):")
+                vehicle.height = ask("  Height (e.g., 58\" or 4' 10\"):")
+        else:
+            print(f"  (Vehicle database not available - dimensions not auto-filled)")
+        
+        vehicles.append(vehicle)
+        
+        print(f"✓ Added {year} {make} {model}")
+    
+    return vehicles
+
+
+def gather_storage() -> List[StorageCategory]:
+    """Gather information about storage needs"""
+    categories = []
+    
+    print("\n" + "=" * 50)
+    print("STORAGE NEEDS")
+    print("=" * 50)
+    print("What do you need to store in the garage?")
+    
+    while True:
+        print("\nStorage categories:")
+        for i, (code, name) in enumerate(STORAGE_CATEGORIES, 1):
+            print(f"  {i}. {name}")
+        print("  0. Done adding storage categories")
+        
+        choice = ask("Enter number (0 when done):")
+        
+        if choice == "0":
+            if not categories:
+                if ask_yes_no("No storage needs - is that correct?"):
+                    break
+                continue
+            break
+        
+        try:
+            idx = int(choice) - 1
+            if 0 <= idx < len(STORAGE_CATEGORIES):
+                code, name = STORAGE_CATEGORIES[idx]
+                
+                if code == "other":
+                    name = ask("What do you need to store?")
+                
+                print(f"\nAdding: {name}")
+                
+                print("\nHow much of this do you have?")
+                print("  1. Light (fits in a small cabinet)")
+                print("  2. Moderate (needs a shelf or two)")
+                print("  3. Heavy (needs significant space)")
+                quantity_choice = ask_number("> ", 1, 3)
+                quantity = ["light", "moderate", "heavy"][quantity_choice - 1]
+                
+                print("\nHow often do you need to access this?")
+                print("  1. Daily")
+                print("  2. Weekly")
+                print("  3. Monthly / Seasonal")
+                print("  4. Rarely (long-term storage)")
+                access_choice = ask_number("> ", 1, 4)
+                accessibility = ["daily", "weekly", "seasonal", "rarely"][access_choice - 1]
+                
+                special = ask("Any special requirements? (climate controlled, locked, etc.)", allow_empty=True)
+                
+                categories.append(StorageCategory(
+                    name=name,
+                    quantity=quantity,
+                    needs_accessibility=accessibility,
+                    special_requirements=special
+                ))
+                
+                print(f"✓ Added {name}")
+                
+        except ValueError:
+            print("Please enter a valid number.")
+    
+    return categories
+
+
+def gather_activities() -> List[WorkActivity]:
+    """Gather information about work activities"""
+    activities = []
+    
+    print("\n" + "=" * 50)
+    print("WORK ACTIVITIES")
+    print("=" * 50)
+    print("What activities will you do in the garage?")
+    
+    while True:
+        print("\nCommon activities:")
+        for i, (code, name) in enumerate(WORK_ACTIVITIES, 1):
+            print(f"  {i}. {name}")
+        print("  0. Done adding activities")
+        
+        choice = ask("Enter number (0 when done):")
+        
+        if choice == "0":
+            if not activities:
+                if ask_yes_no("No work activities - is that correct?"):
+                    break
+                continue
+            break
+        
+        try:
+            idx = int(choice) - 1
+            if 0 <= idx < len(WORK_ACTIVITIES):
+                code, name = WORK_ACTIVITIES[idx]
+                
+                if code == "other":
+                    name = ask("What activity?")
+                
+                print(f"\nAdding: {name}")
+                
+                print("\nHow often will you do this?")
+                print("  1. Daily")
+                print("  2. Weekly")
+                print("  3. Monthly")
+                print("  4. Occasionally")
+                freq_choice = ask_number("> ", 1, 4)
+                frequency = ["daily", "weekly", "monthly", "occasionally"][freq_choice - 1]
+                
+                print("\nHow much space does this need?")
+                print("  1. Small (workbench area)")
+                print("  2. Medium (half a car bay)")
+                print("  3. Large (full car bay or more)")
+                space_choice = ask_number("> ", 1, 3)
+                space = ["small", "medium", "large"][space_choice - 1]
+                
+                print("\nPower requirements?")
+                print("  1. None / battery tools only")
+                print("  2. Standard 110V outlets")
+                print("  3. 220V (welder, compressor, etc.)")
+                power_choice = ask_number("> ", 1, 3)
+                power = ["none", "110v", "220v"][power_choice - 1]
+                
+                notes = ask("Any other notes about this activity?", allow_empty=True)
+                
+                activities.append(WorkActivity(
+                    name=name,
+                    frequency=frequency,
+                    space_needed=space,
+                    power_requirements=power,
+                    notes=notes
+                ))
+                
+                print(f"✓ Added {name}")
+                
+        except ValueError:
+            print("Please enter a valid number.")
+    
+    return activities
+
+
+def gather_priorities() -> dict:
+    """Gather priority rankings"""
+    
+    print("\n" + "=" * 50)
+    print("PRIORITIES")
+    print("=" * 50)
+    print("Help me understand what matters most to you.")
+    print("Rate each on a 1-5 scale.")
+    
+    priorities = {}
+    
+    priorities['vehicle_storage'] = ask_priority(
+        "How important is it that vehicles fit inside?"
+    )
+    
+    priorities['workspace'] = ask_priority(
+        "How important is having a dedicated workspace?"
+    )
+    
+    priorities['general_storage'] = ask_priority(
+        "How important is maximizing storage space?"
+    )
+    
+    priorities['accessibility'] = ask_priority(
+        "How important is easy access to frequently used items?"
+    )
+    
+    return priorities
+
+
+def gather_preferences() -> dict:
+    """Gather layout preferences"""
+    
+    print("\n" + "=" * 50)
+    print("PREFERENCES")
+    print("=" * 50)
+    
+    preferences = {}
+    
+    preferences['wall_storage'] = ask_yes_no(
+        "Are you open to wall-mounted storage (pegboard, slat wall, shelves)?"
+    )
+    
+    preferences['overhead_storage'] = ask_yes_no(
+        "Are you open to overhead/ceiling storage?"
+    )
+    
+    preferences['clear_floor'] = ask_yes_no(
+        "Do you need to keep the floor as clear as possible?"
+    )
+    
+    return preferences
+
+
+def generate_usage_summary(profile: UsageProfile) -> str:
+    """Generate a text summary of the usage profile"""
+    
+    lines = []
+    lines.append("=" * 60)
+    lines.append("GARAGE USAGE PROFILE".center(60))
+    lines.append("=" * 60)
+    
+    # Vehicles
+    lines.append("\nVEHICLES:")
+    if profile.vehicles:
+        for v in profile.vehicles:
+            status = "MUST FIT" if v.must_fit_inside else "optional"
+            lines.append(f"  • {v.year} {v.make} {v.model} ({status})")
+            if v.notes:
+                lines.append(f"    Note: {v.notes}")
+    else:
+        lines.append("  (none)")
+    
+    # Storage
+    lines.append("\nSTORAGE NEEDS:")
+    if profile.storage_categories:
+        for s in profile.storage_categories:
+            lines.append(f"  • {s.name}")
+            lines.append(f"    Quantity: {s.quantity}, Access: {s.needs_accessibility}")
+            if s.special_requirements:
+                lines.append(f"    Special: {s.special_requirements}")
+    else:
+        lines.append("  (none)")
+    
+    # Activities
+    lines.append("\nWORK ACTIVITIES:")
+    if profile.work_activities:
+        for a in profile.work_activities:
+            lines.append(f"  • {a.name}")
+            lines.append(f"    Frequency: {a.frequency}, Space: {a.space_needed}, Power: {a.power_requirements}")
+            if a.notes:
+                lines.append(f"    Note: {a.notes}")
+    else:
+        lines.append("  (none)")
+    
+    # Priorities
+    lines.append("\nPRIORITIES (1-5 scale):")
+    lines.append(f"  Vehicle storage:    {'★' * profile.priority_vehicle_storage}{'☆' * (5 - profile.priority_vehicle_storage)} ({profile.priority_vehicle_storage})")
+    lines.append(f"  Workspace:          {'★' * profile.priority_workspace}{'☆' * (5 - profile.priority_workspace)} ({profile.priority_workspace})")
+    lines.append(f"  General storage:    {'★' * profile.priority_general_storage}{'☆' * (5 - profile.priority_general_storage)} ({profile.priority_general_storage})")
+    lines.append(f"  Accessibility:      {'★' * profile.priority_accessibility}{'☆' * (5 - profile.priority_accessibility)} ({profile.priority_accessibility})")
+    
+    # Preferences
+    lines.append("\nPREFERENCES:")
+    lines.append(f"  Wall-mounted storage: {'Yes' if profile.prefer_wall_storage else 'No'}")
+    lines.append(f"  Overhead storage:     {'Yes' if profile.prefer_overhead_storage else 'No'}")
+    lines.append(f"  Keep floor clear:     {'Yes' if profile.need_clear_floor else 'No'}")
+    
+    if profile.notes:
+        lines.append(f"\nADDITIONAL NOTES:")
+        lines.append(f"  {profile.notes}")
+    
+    return "\n".join(lines)
+
+
+def save_usage_profile(profile: UsageProfile, filename: str = "garage_usage.json"):
+    """Save usage profile to JSON file"""
+    
+    data = {
+        "vehicles": [
+            {
+                "year": v.year,
+                "make": v.make,
+                "model": v.model,
+                "must_fit_inside": v.must_fit_inside,
+                "length": v.length,
+                "width": v.width,
+                "height": v.height,
+                "notes": v.notes
+            }
+            for v in profile.vehicles
+        ],
+        "storage_categories": [
+            {
+                "name": s.name,
+                "quantity": s.quantity,
+                "needs_accessibility": s.needs_accessibility,
+                "special_requirements": s.special_requirements
+            }
+            for s in profile.storage_categories
+        ],
+        "work_activities": [
+            {
+                "name": a.name,
+                "frequency": a.frequency,
+                "space_needed": a.space_needed,
+                "power_requirements": a.power_requirements,
+                "notes": a.notes
+            }
+            for a in profile.work_activities
+        ],
+        "priorities": {
+            "vehicle_storage": profile.priority_vehicle_storage,
+            "workspace": profile.priority_workspace,
+            "general_storage": profile.priority_general_storage,
+            "accessibility": profile.priority_accessibility
+        },
+        "preferences": {
+            "wall_storage": profile.prefer_wall_storage,
+            "overhead_storage": profile.prefer_overhead_storage,
+            "clear_floor": profile.need_clear_floor
+        },
+        "notes": profile.notes
+    }
+    
+    with open(filename, 'w') as f:
+        json.dump(data, f, indent=2)
+    
+    return filename
+
+
+def main():
+    """Main questionnaire flow"""
+    
+    print("\n" + "=" * 60)
+    print("GARAGE LAYOUT PLANNER".center(60))
+    print("Phase 2: Usage Questionnaire".center(60))
+    print("=" * 60)
+    
+    print("\nNow let's figure out how you want to USE your garage.")
+    print("This helps us optimize the layout for your needs.")
+    print("\nTip: Type 'quit' or 'exit' at any prompt to exit.")
+    
+    profile = UsageProfile()
+    
+    # Gather all sections
+    profile.vehicles = gather_vehicles()
+    profile.storage_categories = gather_storage()
+    profile.work_activities = gather_activities()
+    
+    priorities = gather_priorities()
+    profile.priority_vehicle_storage = priorities['vehicle_storage']
+    profile.priority_workspace = priorities['workspace']
+    profile.priority_general_storage = priorities['general_storage']
+    profile.priority_accessibility = priorities['accessibility']
+    
+    preferences = gather_preferences()
+    profile.prefer_wall_storage = preferences['wall_storage']
+    profile.prefer_overhead_storage = preferences['overhead_storage']
+    profile.need_clear_floor = preferences['clear_floor']
+    
+    # Final notes
+    print("\n" + "=" * 50)
+    profile.notes = ask(
+        "Any other notes about how you'll use the garage?\n(Press Enter to skip)",
+        allow_empty=True
+    )
+    
+    # Generate and display summary
+    print("\n")
+    summary = generate_usage_summary(profile)
+    print(summary)
+    
+    # Save files
+    json_file = save_usage_profile(profile)
+    print(f"\n✓ Usage profile saved to {json_file}")
+    
+    with open("garage_usage.txt", "w") as f:
+        f.write(summary)
+    print("✓ Summary saved to garage_usage.txt")
+    
+    print("\n" + "=" * 60)
+    print("Usage questionnaire complete!")
+    print("Next steps: Generate optimized layout recommendations.")
+    print("=" * 60)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except UserExitException:
+        print("\n\nExiting... Goodbye!")
+    except KeyboardInterrupt:
+        print("\n\nExiting... Goodbye!")

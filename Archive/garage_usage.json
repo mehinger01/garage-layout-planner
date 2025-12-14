@@ -1,0 +1,81 @@
+{
+  "vehicles": [
+    {
+      "year": "2018",
+      "make": "Nissan",
+      "model": "Altima",
+      "must_fit_inside": false,
+      "length": "192.9\"",
+      "width": "72.9\"",
+      "height": "56.7\"",
+      "notes": "n"
+    },
+    {
+      "year": "2019",
+      "make": "Hyundai",
+      "model": "Elantra",
+      "must_fit_inside": true,
+      "length": "184.1\"",
+      "width": "71.9\"",
+      "height": "55.7\"",
+      "notes": "n"
+    }
+  ],
+  "storage_categories": [
+    {
+      "name": "Lawn & Garden (mower, trimmer, hoses, pots)",
+      "quantity": "heavy",
+      "needs_accessibility": "weekly",
+      "special_requirements": "n"
+    },
+    {
+      "name": "Hand Tools (hammers, screwdrivers, wrenches)",
+      "quantity": "moderate",
+      "needs_accessibility": "weekly",
+      "special_requirements": "n"
+    },
+    {
+      "name": "Automotive (oil, fluids, parts, car care)",
+      "quantity": "moderate",
+      "needs_accessibility": "seasonal",
+      "special_requirements": "n"
+    },
+    {
+      "name": "Workshop Materials (lumber, hardware, supplies)",
+      "quantity": "light",
+      "needs_accessibility": "seasonal",
+      "special_requirements": "n"
+    },
+    {
+      "name": "Workshop Materials (lumber, hardware, supplies)",
+      "quantity": "heavy",
+      "needs_accessibility": "seasonal",
+      "special_requirements": "n"
+    },
+    {
+      "name": "Household Overflow (pantry, bulk items)",
+      "quantity": "heavy",
+      "needs_accessibility": "rarely",
+      "special_requirements": "n"
+    },
+    {
+      "name": "Seasonal Items (decorations, furniture)",
+      "quantity": "heavy",
+      "needs_accessibility": "rarely",
+      "special_requirements": "n"
+    }
+  ],
+  "work_activities": [],
+  "priorities": {
+    "vehicle_storage": 3,
+    "workspace": 5,
+    "general_storage": 5,
+    "accessibility": 4
+  },
+  "preferences": {
+    "wall_storage": true,
+    "overhead_storage": true,
+    "clear_floor": false
+  },
+  "notes": "n"
+}

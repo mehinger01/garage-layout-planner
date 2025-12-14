@@ -1,0 +1,46 @@
+============================================================
+                    GARAGE USAGE PROFILE                    
+============================================================
+
+VEHICLES:
+  • 2018 Nissan Altima (optional)
+    Note: n
+  • 2019 Hyundai Elantra (MUST FIT)
+    Note: n
+
+STORAGE NEEDS:
+  • Hand Tools (hammers, screwdrivers, wrenches)
+    Quantity: moderate, Access: rarely
+    Special: n
+  • Power Tools (drills, saws, sanders)
+    Quantity: moderate, Access: seasonal
+    Special: n
+  • Lawn & Garden (mower, trimmer, hoses, pots)
+    Quantity: heavy, Access: weekly
+    Special: n
+  • Automotive (oil, fluids, parts, car care)
+    Quantity: moderate, Access: weekly
+    Special: n
+  • Seasonal Items (decorations, furniture)
+    Quantity: heavy, Access: rarely
+    Special: n
+  • Household Overflow (pantry, bulk items)
+    Quantity: heavy, Access: rarely
+    Special: n
+  • Workshop Materials (lumber, hardware, supplies)
+    Quantity: heavy, Access: seasonal
+    Special: n
+
+WORK ACTIVITIES:
+  (none)
+
+PRIORITIES (1-5 scale):
+  Vehicle storage:    ***-- (3)
+  Workspace:          ***** (5)
+  General storage:    ***** (5)
+  Accessibility:      ****- (4)
+
+PREFERENCES:
+  Wall-mounted storage: Yes
+  Overhead storage:     Yes
+  Keep floor clear:     No

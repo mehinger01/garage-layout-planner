@@ -1,0 +1,54 @@
+============================================================
+             GARAGE FLOOR PLAN (Top-Down View)              
+             Dimensions: 25' (E-W) x 25' (N-S)              
+                   Ceiling Height: 12' 2"                   
+============================================================
+
+                  NORTH WALL: Service Door                  
++----------------------------------------------------------+
+         Window |                                                          | Entry Door
+         Window |                                                          | Electrical Panel
+                |                                                          |
+                |                                                          |
+                |                                                          |
+                |                                                          |
+                |                                                          |
+                |                                                          |
+                |                                                          |
+                |                                                          |
+                |                                                          |
+                |                                                          |
+                |                                                          |
+                |                                                          |
+                |                                                          |
++----------------------------------------------------------+
+                  SOUTH WALL: Garage Door                   
+
+============================================================
+FEATURE DETAILS:
+============================================================
+
+North Wall (25'):
+  • Service Door: 0' 36" wide, 12' 6" from left
+    Note: exterior door, centered
+
+East Wall (25'):
+  • Entry Door: 0' 36" wide, 18' 9" from left
+    Note: door into house
+  • Electrical Panel: 0' 18" wide, 23' 9" from left
+    Note: 5' after entry door
+
+South Wall (25'):
+  • Garage Door: 16' wide, 12' 6" from left
+    Note: centered on wall
+
+West Wall (25'):
+  • Window: 0' 36" wide, 0' 62" from left
+    Note: left window
+  • Window: 0' 36" wide, 19' 2" from left
+    Note: right window, 64" from right edge
+
+Floor Features: (none)
+
+Additional Notes:
+  25' x 25' garage. 8' between windows on west wall.
